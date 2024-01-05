@@ -26,6 +26,7 @@ prevTab.classList.add("highlight");
 
 function switchTab(currTab){
   if(currTab!=prevTab){
+      if(errorPage.classList.contains("activate")) errorPage.classList.remove("activate");
       prevTab.classList.remove("highlight");
       prevTab=currTab;
       prevTab.classList.add("highlight");
@@ -110,8 +111,8 @@ async function getWeatherByLatLong(latitude,longitude){
       displayData(data);
    }catch(e){
       loading.classList.remove("loading-active");
-      searchBar.classList.remove("active-searchbar");
-      weatherPage.classList.remove("weather-active");
+      if(searchBar.classList.contains("active-searchbar")) searchBar.classList.remove("active-searchbar");
+      if(weatherPage.classList.contains("weather-active")) weatherPage.classList.remove("weather-active");
       errorPage.classList.add("activate");
       console.log(e);
       errorMessage.innerText=e;
@@ -126,11 +127,20 @@ async function getWeatherByCity(city){
      const data=await response.json();
      loading.classList.remove("loading-active");
      weatherPage.classList.add("weather-active");
+     if(data.cod==="404"){
+       loading.classList.remove("loading-active");
+       if(weatherPage.classList.contains("weather-active")) weatherPage.classList.remove("weather-active");
+       errorPage.classList.add("activate");
+       errorMessage.innerText="Entered incorrect city name!!!";
+       return;
+     }
      displayData(data);
   }catch(e){
-     loading.classList.remove("loading-active");
-     console.log(e);
-     errorPage.classList.add("activate");
+      loading.classList.remove("loading-active");
+      if(weatherPage.classList.contains("weather-active")) weatherPage.classList.remove("weather-active");
+      errorPage.classList.add("activate");
+      console.log(e);
+      errorMessage.innerText=e;
   }
 }
 
