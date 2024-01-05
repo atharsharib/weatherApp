@@ -78,6 +78,7 @@ inputBox.addEventListener("keyup",(e)=>{
     if (e.key === 'Enter') {
       if(inputBox.value){
         console.log(inputBox.value);
+        if(errorPage.classList.contains("activate")) errorPage.classList.remove("activate");
         getWeatherByCity(inputBox.value);
       }
     }
