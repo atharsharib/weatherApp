@@ -69,6 +69,7 @@ locationButton.addEventListener("click" , ()=>{
 searchButton.addEventListener("click",()=>{
     if(inputBox.value){
       console.log(inputBox.value);
+      if(errorPage.classList.contains("activate")) errorPage.classList.remove("activate");
       getWeatherByCity(inputBox.value);
     }
 })
