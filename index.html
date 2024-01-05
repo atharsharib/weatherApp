@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <title>WeatherApp</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>WEATHER APP</h1>
+        <div class="nav">
+            <p class="yourweather">Your Weather</p>
+            <p class="searchweather">Search Weather</p>
+        </div>
+        <div class="welcome-page">
+            <img src="assets/location.png" alt="" height="100" width="100">
+            <h2>Grant Location Access</h2>
+            <p>Allow Access to get weather Information</p>
+            <button locationAccess>
+                GRANT ACCESS
+            </button>
+        </div>
+        <div class="search-bar">
+            <input class="input-box" type="text" placeholder="Search for City...">
+            <button searchbutton>
+                <img src="assets/search.png" alt="" height="20" width="20">
+            </button>
+        </div>
+        <div class="loading">
+                <img src="assets/loading.gif" alt="" height="100" width="100">
+                <p>LOADING</p>
+        </div>
+        <div class="weather">
+            <div class="city-flag">
+                <h2 placename></h2>
+                <img src="" alt="" class="icon" flag>
+            </div>
+            <p weatherdescription></p>
+            <img src="" alt="" id="id1">
+            <h3 temperature></h3>
+            <div class="added-details">
+                <div class="windspeed box">
+                    <img src="assets/wind.png" alt="" height="50" width="50">
+                    <p>WINDSPEED</p>
+                    <p windspeed class="wind-speed"></p>
+                </div>
+                <div class="humidity box">
+                    <img src="assets/humidity.png" alt="" height="50" width="50">
+                    <p>HUMIDITY</p>
+                    <p humidity></p>
+                </div>
+                <div class="clouds box">
+                    <img src="assets/cloud.png" alt="" height="50" width="50">
+                    <p>CLOUDS</p>
+                    <p cloud></p>
+                </div>
+            </div>
+        </div>
+        <div class="error-page" errorpage>
+            <img src="assets/not-found.png" alt="">
+            <p errormessage></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
