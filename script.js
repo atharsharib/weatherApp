@@ -34,7 +34,6 @@ function switchTab(currTab){
         welcomePage.classList.add("inactive");
         searchBar.classList.add("active-searchbar");
         weatherPage.classList.remove("weather-active");
-        errorPage.classList.remove("activate");
       }else{
         searchBar.classList.remove("active-searchbar");
         weatherPage.classList.remove("weather-active");
